@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cảnh Báo & Hỗ Trợ Phòng Chống Cờ Bạc Mạng</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Inter & Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        danger: {
+                            50: '#fef2f2',
+                            100: '#fee2e2',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            900: '#7f1d1d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.2);
+        }
+        .card-glass {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-red-500 selection:text-white">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-red-600 to-rose-500 flex items-center justify-center text-white shadow-lg shadow-red-500/30">
+                    <i class="fa-solid fa-shield-halved text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-lg font-extrabold tracking-tight text-white block">TỈNH THỨC 24/7</span>
+                    <span class="text-xs text-red-400 font-medium tracking-wide">Cổng thông tin phòng chống cờ bạc mạng</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-1 lg:space-x-6 text-sm font-medium">
+                <a href="#overview" class="text-gray-300 hover:text-red-400 transition py-2 px-3 rounded-lg hover:bg-gray-800/50">Tổng Quan</a>
+                <a href="#traps" class="text-gray-300 hover:text-red-400 transition py-2 px-3 rounded-lg hover:bg-gray-800/50">Bẫy Nhà Cái</a>
+                <a href="#quiz" class="text-gray-300 hover:text-red-400 transition py-2 px-3 rounded-lg hover:bg-gray-800/50">Trắc Nghiệm</a>
+                <a href="#stories" class="text-gray-300 hover:text-red-400 transition py-2 px-3 rounded-lg hover:bg-gray-800/50">Cảnh Tỉnh</a>
+                <a href="#solutions" class="text-gray-300 hover:text-red-400 transition py-2 px-3 rounded-lg hover:bg-gray-800/50">Giải Pháp</a>
+                <a href="#support" class="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2.5 rounded-xl shadow-lg shadow-red-600/30 transition transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-phone-volume mr-1.5"></i> Cần Cứu Giúp Ngay
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white p-2 rounded-lg focus:outline-none bg-gray-800">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-b border-gray-800 px-4 pt-2 pb-6 space-y-2">
+            <a href="#overview" class="block py-2.5 px-4 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-red-400">Tổng Quan</a>
+            <a href="#traps" class="block py-2.5 px-4 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-red-400">Bẫy Nhà Cái</a>
+            <a href="#quiz" class="block py-2.5 px-4 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-red-400">Trắc Nghiệm</a>
+            <a href="#stories" class="block py-2.5 px-4 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-red-400">Cảnh Tỉnh</a>
+            <a href="#solutions" class="block py-2.5 px-4 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-red-400">Giải Pháp</a>
+            <a href="#support" class="block text-center mt-3 bg-red-600 text-white font-semibold py-3 rounded-xl shadow-lg">Cần Cứu Giúp Ngay</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden py-20 lg:py-32 bg-gradient-to-b from-gray-900 via-gray-900 to-[#0b0f19]">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ef4444_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-4xl mx-auto">
+                    <div class="inline-flex items-center space-x-2 bg-red-500/10 border border-red-500/20 text-red-400 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                        <span>Cảnh báo khẩn cấp: Vấn nạn cờ bạc trực tuyến tại Việt Nam</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                        Cờ bạc mạng: <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-400">Hố sâu không đáy</span> và con đường cứu chuộc
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-400 mb-10 leading-relaxed">
+                        Chỉ với một chiếc điện thoại thông minh, cờ bạc trực tuyến có thể nuốt chửng tài sản, danh dự, tương lai và đẩy cả gia đình vào bước đường cùng. Hãy tỉnh thức trước khi quá muộn.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="#quiz" class="w-full sm:w-auto bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-red-600/30 transition transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-clipboard-question mr-2"></i> Kiểm Tra Mức Độ Nghiện
+                        </a>
+                        <a href="#traps" class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 text-gray-200 font-semibold px-8 py-4 rounded-xl border border-gray-700 transition">
+                            <i class="fa-solid fa-eye mr-2"></i> Vạch Trần Chiêu Trò
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+                    <div class="card-glass p-6 rounded-2xl border-l-4 border-red-500 shadow-xl">
+                        <div class="text-3xl sm:text-4xl font-extrabold text-red-500 mb-2">95%+</div>
+                        <h3 class="text-lg font-bold text-white mb-1">Người chơi thua sạch</h3>
+                        <p class="text-sm text-gray-400">Các thuật toán máy chủ được lập trình sẵn để người chơi thắng nhỏ ban đầu và thua toàn bộ về lâu dài.</p>
+                    </div>
+                    <div class="card-glass p-6 rounded-2xl border-l-4 border-rose-500 shadow-xl">
+                        <div class="text-3xl sm:text-4xl font-extrabold text-rose-500 mb-2">Hàng ngàn</div>
+                        <h3 class="text-lg font-bold text-white mb-1">Gia đình tan vỡ</h3>
+                        <p class="text-sm text-gray-400">Nợ nần chồng chất, trộm cắp, lừa đảo chiếm đoạt tài sản dẫn đến tù tội và ly hôn.</p>
+                    </div>
+                    <div class="card-glass p-6 rounded-2xl border-l-4 border-amber-500 shadow-xl">
+                        <div class="text-3xl sm:text-4xl font-extrabold text-amber-500 mb-2">24/7</div>
+                        <h3 class="text-lg font-bold text-white mb-1">Sự cám dỗ thường trực</h3>
+                        <p class="text-sm text-gray-400">Sòng bạc online nằm ngay trong túi bạn, hoạt động không ngày nghỉ, dễ dàng tiếp cận mọi lúc mọi nơi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Overview & Traps -->
+        <section id="traps" class="py-20 bg-gray-900/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-red-400 font-semibold text-sm uppercase tracking-wider">Bẫy nhà cái trực tuyến</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">Chúng vận hành tâm lý bạn như thế nào?</h2>
+                    <p class="text-gray-400">Cờ bạc trực tuyến không phải là trò chơi may rủi đơn thuần, đó là một cỗ máy khoa học hành vi được thiết kế tinh vi để hút máu người chơi.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Trap 1 -->
+                    <div class="card-glass p-6 rounded-2xl hover:border-red-500/50 transition group">
+                        <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center text-2xl font-bold mb-4 group-hover:bg-red-500 group-hover:text-white transition">
+                            <i class="fa-solid fa-gift"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Khuyến Mãi "Ảo"</h3>
+                        <p class="text-sm text-gray-400">Nạp 1 tặng 1, hoàn trả mỗi ngày. Thực tế, bạn phải đạt doanh thu cược (vòng cược) gấp 10-20 lần mới được rút tiền, kết quả là cháy tài khoản trước khi kịp rút.</p>
+                    </div>
+                    <!-- Trap 2 -->
+                    <div class="card-glass p-6 rounded-2xl hover:border-red-500/50 transition group">
+                        <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center text-2xl font-bold mb-4 group-hover:bg-red-500 group-hover:text-white transition">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Thao Túng Kết Quả</h3>
+                        <p class="text-sm text-gray-400">Hệ thống backend có thể can thiệp trực tiếp tỷ lệ thắng thua. Cho khách ăn đậm mấy ván đầu tạo tâm lý "dễ kiếm tiền", sau đó cắt chuỗi và nuốt sạch.</p>
+                    </div>
+                    <!-- Trap 3 -->
+                    <div class="card-glass p-6 rounded-2xl hover:border-red-500/50 transition group">
+                        <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center text-2xl font-bold mb-4 group-hover:bg-red-500 group-hover:text-white transition">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Hiệu Ứng "Gỡ Gạc"</h3>
+                        <p class="text-sm text-gray-400">Khi thua, não bộ kích thích ham muốn gỡ lại vốn (Chasing losses). Càng gỡ càng lún sâu, lý trí bị cảm giác cay cú che mờ hoàn toàn.</p>
+                    </div>
+                    <!-- Trap 4 -->
+                    <div class="card-glass p-6 rounded-2xl hover:border-red-500/50 transition group">
+                        <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center text-2xl font-bold mb-4 group-hover:bg-red-500 group-hover:text-white transition">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Tốc Độ Chớp Nhoáng</h3>
+                        <p class="text-sm text-gray-400">Mỗi ván bài chỉ kéo dài 15-30 giây. Tiền bay đi nhanh đến mức não không kịp cảm nhận giá trị thực của đồng tiền, dẫn đến vung tay quá trán.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Self-Assessment Quiz -->
+        <section id="quiz" class="py-20 relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-red-400 font-semibold text-sm uppercase tracking-wider">Đánh giá nhanh</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">Bạn có đang rơi vào bẫy cờ bạc?</h2>
+                    <p class="text-gray-400">Trả lời 5 câu hỏi dưới đây một cách trung thực để nhận chẩn đoán sơ bộ về mức độ ảnh hưởng của cờ bạc đối với cuộc sống của bạn.</p>
+                </div>
+
+                <div class="card-glass p-6 sm:p-10 rounded-3xl shadow-2xl border border-gray-800">
+                    <div id="quiz-container">
+                        <!-- Dynamic quiz items injected by JS -->
+                    </div>
+
+                    <!-- Quiz Result Box -->
+                    <div id="quiz-result" class="hidden mt-8 p-6 rounded-2xl border text-center transition-all">
+                        <h3 id="result-title" class="text-2xl font-extrabold mb-3"></h3>
+                        <p id="result-desc" class="text-gray-300 text-sm sm:text-base mb-6 leading-relaxed"></p>
+                        <button onclick="resetQuiz()" class="bg-gray-800 hover:bg-gray-700 text-white font-medium px-6 py-2.5 rounded-xl border border-gray-700 transition">
+                            <i class="fa-solid fa-rotate-right mr-2"></i> Làm lại bài trắc nghiệm
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Real Stories & Warnings -->
+        <section id="stories" class="py-20 bg-gray-900/40 border-y border-gray-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-red-400 font-semibold text-sm uppercase tracking-wider">Góc cảnh tỉnh</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">Câu chuyện thực tế từ những người từng lầm lỡ</h2>
+                    <p class="text-gray-400">Những lời tâm sự từ đáy lòng của những người đã trả giá bằng mồ hôi, nước mắt và cả tự do.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Story 1 -->
+                    <div class="card-glass p-6 sm:p-8 rounded-3xl flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-6 text-red-500/10 text-6xl font-serif">“</div>
+                        <div>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="w-12 h-12 rounded-full bg-red-600/20 text-red-400 flex items-center justify-center font-bold text-lg">
+                                    H
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Anh Hoàng (32 tuổi)</h4>
+                                    <span class="text-xs text-red-400">Đã cai nghiện thành công 2 năm</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                "Ban đầu chỉ nghĩ chơi vui 200k-500k giải trí buổi tối. Nào ngờ dính vào bóng đá và tài xỉu online, số nợ cứ phình to lên 800 triệu lúc nào không hay. Vợ con lánh mặt, bố mẹ khóc ngất. Khoảnh khắc tôi quyết định thú nhận với gia đình và cắt đứt hoàn toàn điện thoại thông minh chính là lúc cuộc đời tôi được cứu."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                            <span><i class="fa-solid fa-location-dot mr-1"></i> TP. Hồ Chí Minh</span>
+                            <span class="text-emerald-400 font-medium">Đã làm lại cuộc đời</span>
+                        </div>
+                    </div>
+
+                    <!-- Story 2 -->
+                    <div class="card-glass p-6 sm:p-8 rounded-3xl flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-6 text-red-500/10 text-6xl font-serif">“</div>
+                        <div>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="w-12 h-12 rounded-full bg-red-600/20 text-red-400 flex items-center justify-center font-bold text-lg">
+                                    M
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Chị Mai (28 tuổi)</h4>
+                                    <span class="text-xs text-red-400">Bảo vệ gia đình khỏi nợ nần</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                "Chồng tôi giấu gia đình chơi casino trực tuyến qua các hội nhóm Telegram. Đến khi chủ nợ tìm đến tận nhà đòi tiền, tôi mới bàng hoàng phát hiện. Sổ đỏ đã cắm, tiền tiết kiệm sạch bách. Chúng tôi phải bán nhà trả nợ và chuyển đi nơi khác sống lại từ đầu. Đừng bao giờ tin câu 'anh gỡ xong trận này là nghỉ'."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                            <span><i class="fa-solid fa-location-dot mr-1"></i> Hà Nội</span>
+                            <span class="text-amber-400 font-medium">Đang trả góp nợ cũ</span>
+                        </div>
+                    </div>
+
+                    <!-- Story 3 -->
+                    <div class="card-glass p-6 sm:p-8 rounded-3xl flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-6 text-red-500/10 text-6xl font-serif">“</div>
+                        <div>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="w-12 h-12 rounded-full bg-red-600/20 text-red-400 flex items-center justify-center font-bold text-lg">
+                                    T
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Bạn Tùng (21 tuổi)</h4>
+                                    <span class="text-xs text-red-400">Cựu sinh viên đại học</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                "Vì muốn có tiền mua iPhone và tiêu xài nhanh, mình lướt TikTok thấy quảng cáo app tài xỉu đổi thưởng. Ban đầu thắng được vài triệu tưởng hời lắm, sau đó thua liên tiếp và vay app tín dụng đen. Lãi mẹ đẻ lãi con, khủng hoảng tinh thần suýt trầm cảm. May có bố mẹ đứng ra giải quyết và cho một cơ hội sửa sai."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                            <span><i class="fa-solid fa-location-dot mr-1"></i> Đà Nẵng</span>
+                            <span class="text-emerald-400 font-medium">Đã quay lại trường học</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Expert Solutions & Recovery Steps -->
+        <section id="solutions" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-red-400 font-semibold text-sm uppercase tracking-wider">Cẩm nang thoát nạn</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">Các bước thiết thực để cai nghiện cờ bạc</h2>
+                    <p class="text-gray-400">Nghiện cờ bạc là một dạng rối loạn tâm lý hành vi có thể chữa khỏi nếu bạn có kỷ luật thép và sự hỗ trợ đúng đắn từ gia đình.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Step 1 -->
+                    <div class="card-glass p-6 rounded-2xl relative">
+                        <span class="absolute -top-3 -left-3 w-10 h-10 rounded-xl bg-red-600 text-white font-bold flex items-center justify-center shadow-lg">01</span>
+                        <h3 class="text-xl font-bold text-white mb-2 mt-2">Cắt Đứt Thiết Bị & App</h3>
+                        <p class="text-sm text-gray-400">Gỡ ngay lập tức tất cả các ứng dụng đánh bạc, khóa các tài khoản mạng xã hội hay tham gia nhóm soi cầu, bóng đá. Đổi sang dùng điện thoại cục gạch nếu cần thiết trong thời gian đầu.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="card-glass p-6 rounded-2xl relative">
+                        <span class="absolute -top-3 -left-3 w-10 h-10 rounded-xl bg-red-600 text-white font-bold flex items-center justify-center shadow-lg">02</span>
+                        <h3 class="text-xl font-bold text-white mb-2 mt-2">Giao Quản Lý Tài Chính</h3>
+                        <p class="text-sm text-gray-400">Tự nguyện giao toàn bộ thẻ ngân hàng, tiền mặt cho vợ/chồng hoặc bố mẹ quản lý. Tuyệt đối không giữ tiền mặt trong người để triệt tiêu hoàn toàn khả năng nạp tiền.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="card-glass p-6 rounded-2xl relative">
+                        <span class="absolute -top-3 -left-3 w-10 h-10 rounded-xl bg-red-600 text-white font-bold flex items-center justify-center shadow-lg">03</span>
+                        <h3 class="text-xl font-bold text-white mb-2 mt-2">Thú Nhận & Tìm Hỗ Trợ</h3>
+                        <p class="text-sm text-gray-400">Dũng cảm nói sự thật với người thân. Giấu giếm chính là nhiên liệu nuôi dưỡng thói quen cờ bạc. Sự tha thứ và đồng hành của gia đình là chiếc phao cứu sinh lớn nhất.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="card-glass p-6 rounded-2xl relative">
+                        <span class="absolute -top-3 -left-3 w-10 h-10 rounded-xl bg-red-600 text-white font-bold flex items-center justify-center shadow-lg">04</span>
+                        <h3 class="text-xl font-bold text-white mb-2 mt-2">Lập Kế Hoạch Trả Nợ</h3>
+                        <p class="text-sm text-gray-400">Liệt kê rõ ràng các khoản nợ hợp pháp (ngân hàng, người thân) và thương lượng giãn nợ. Tuyệt đối không vay app tín dụng đen mới để trả nợ cũ – đây là bẫy chết người.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Support Hotline & Resources -->
+        <section id="support" class="py-20 bg-gradient-to-t from-gray-900 to-[#0b0f19]">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="card-glass p-8 sm:p-12 rounded-3xl border border-red-500/30 glow-effect text-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-red-600/5 pointer-events-none"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-2xl bg-red-600 text-white flex items-center justify-center text-3xl mx-auto mb-6 shadow-xl shadow-red-600/40">
+                            <i class="fa-solid fa-hands-holding-child"></i>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Bạn hoặc người thân đang cần trợ giúp khẩn cấp?</h2>
+                        <p class="text-gray-300 max-w-2xl mx-auto mb-8 text-sm sm:text-base leading-relaxed">
+                            Đừng tuyệt vọng. Mọi sai lầm đều có thể sửa chữa khi bạn quyết tâm dừng lại ngay hôm nay. Hãy liên hệ với các tổ chức tư vấn tâm lý, hỗ trợ pháp lý và cơ quan chức năng để được bảo vệ.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                            <div class="bg-gray-900/80 p-6 rounded-2xl border border-gray-800">
+                                <i class="fa-solid fa-phone-volume text-red-500 text-2xl mb-3"></i>
+                                <h4 class="font-bold text-white mb-1">Đường dây nóng Công An</h4>
+                                <p class="text-red-400 font-extrabold text-lg">113</p>
+                                <span class="text-xs text-gray-400 block mt-1">Tố giác tội phạm cờ bạc mạng, tín dụng đen</span>
+                            </div>
+                            <div class="bg-gray-900/80 p-6 rounded-2xl border border-gray-800">
+                                <i class="fa-solid fa-user-doctor text-red-500 text-2xl mb-3"></i>
+                                <h4 class="font-bold text-white mb-1">Tư vấn Tâm lý Sức khỏe</h4>
+                                <p class="text-emerald-400 font-bold text-base">Viện Sức Khỏe Tâm Thần</p>
+                                <span class="text-xs text-gray-400 block mt-1">Hỗ trợ cắt cơn nghiện hành vi</span>
+                            </div>
+                            <div class="bg-gray-900/80 p-6 rounded-2xl border border-gray-800">
+                                <i class="fa-solid fa-scale-balanced text-red-500 text-2xl mb-3"></i>
+                                <h4 class="font-bold text-white mb-1">Trợ giúp Pháp lý</h4>
+                                <p class="text-sky-400 font-bold text-base">Đường dây Pháp luật 1900</p>
+                                <span class="text-xs text-gray-400 block mt-1">Giải quyết khủng hoảng nợ nần</span>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Help Form -->
+                        <div class="max-w-xl mx-auto bg-gray-900/90 p-6 rounded-2xl border border-gray-800 text-left">
+                            <h3 class="text-lg font-bold text-white mb-3 text-center">Gửi yêu cầu hỗ trợ ẩn danh</h3>
+                            <p class="text-xs text-gray-400 mb-4 text-center">Thông tin của bạn được bảo mật tuyệt đối. Chuyên gia tư vấn sẽ liên hệ lại qua email hoặc số điện thoại bạn cung cấp.</p>
+                            <form onsubmit="handleSupportSubmit(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Tên hiển thị / Bi danh</label>
+                                    <input type="text" required placeholder="Ví dụ: Người tỉnh thức" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500">
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-gray-300 mb-1">Số điện thoại / Zalo</label>
+                                        <input type="text" required placeholder="090x xxx xxx" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-gray-300 mb-1">Tình trạng hiện tại</label>
+                                        <select class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500">
+                                            <option>Đang muốn dừng lại nhưng không thể</option>
+                                            <option>Nợ nần chồng chất do cờ bạc</option>
+                                            <option>Có người thân đang nghiện cờ bạc</option>
+                                            <option>Cần tư vấn tâm lý / pháp lý</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Chia sẻ thêm (Tùy chọn)</label>
+                                    <textarea rows="3" placeholder="Hãy viết ra những áp lực bạn đang gặp phải..." class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-red-500"></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl shadow-lg shadow-red-600/30 transition">
+                                    Gửi Yêu Cầu Cứu Giúp
+                                </button>
+                            </form>
+                            <div id="form-success" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-center text-sm font-medium">
+                                <i class="fa-solid fa-circle-check mr-1"></i> Yêu cầu của bạn đã được ghi nhận. Hãy bình tĩnh, bạn không đơn độc!
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-800 py-12 text-sm text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-red-600 flex items-center justify-center text-white font-bold">
+                    <i class="fa-solid fa-shield-halved text-sm"></i>
+                </div>
+                <span class="font-bold text-white">Tỉnh Thức 24/7 - Phòng Chống Cờ Bạc Mạng</span>
+            </div>
+            <p class="text-center md:text-left text-xs text-gray-500">
+                Trang thông tin cộng đồng nhằm nâng cao nhận thức và hỗ trợ phòng chống tệ nạn cờ bạc trực tuyến. Vì một tương lai an toàn, văn minh.
+            </p>
+            <div class="flex items-center space-x-4 text-gray-400">
+                <a href="#overview" class="hover:text-white transition">Chính sách bảo mật</a>
+                <a href="#support" class="hover:text-white transition">Liên hệ hỗ trợ</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Quiz Data
+        const quizQuestions = [
+            {
+                question: "1. Bạn có thường xuyên nghĩ về cờ bạc hoặc lên kế hoạch chơi trong ngày không?",
+                options: [
+                    { text: "Rất ít hoặc không bao giờ", score: 0 },
+                    { text: "Thỉnh thoảng có nghĩ tới", score: 1 },
+                    { text: "Hầu như cả ngày đều nghĩ đến việc đặt cược", score: 2 }
+                ]
+            },
+            {
+                question: "2. Bạn đã từng tăng số tiền đặt cược lên cao hơn để cảm thấy hồi hộp hoặc gỡ lại số tiền đã thua chưa?",
+                options: [
+                    { text: "Chưa bao giờ", score: 0 },
+                    { text: "Đã từng vài lần", score: 1 },
+                    { text: "Thường xuyên tăng tiền cược để gỡ gạc", score: 2 }
+                ]
+            },
+            {
+                question: "3. Bạn có bao giờ nói dối gia đình, bạn bè về số tiền hoặc thời gian bạn dành cho cờ bạc không?",
+                options: [
+                    { text: "Không bao giờ", score: 0 },
+                    { text: "Có che giấu đôi lần", score: 1 },
+                    { text: "Thường xuyên nói dối để tiếp tục chơi", score: 2 }
+                ]
+            },
+            {
+                question: "4. Bạn có cảm thấy bứt rứt, cáu gắt hoặc lo âu khi cố gắng cắt giảm hoặc ngừng chơi cờ bạc không?",
+                options: [
+                    { text: "Bình thường, không ảnh hưởng", score: 0 },
+                    { text: "Có cảm thấy hơi bứt rứt", score: 1 },
+                    { text: "Rất khó chịu, không thể ngừng nghĩ về việc chơi tiếp", score: 2 }
+                ]
+            },
+            {
+                question: "5. Bạn có từng dùng tiền sinh hoạt, tiền vay mượn hoặc tiền đáng lẽ dùng cho việc khác để tiếp tục nạp vào cờ bạc không?",
+                options: [
+                    { text: "Chưa từng", score: 0 },
+                    { text: "Đã từng vài lần dùng nhầm khoản khác", score: 1 },
+                    { text: "Thường xuyên vay mượn, cắm đồ đạc để chơi", score: 2 }
+                ]
+            }
+        ];
+
+        let currentQuestion = 0;
+        let totalScore = 0;
+
+        const quizContainer = document.getElementById('quiz-container');
+        const quizResult = document.getElementById('quiz-result');
+        const resultTitle = document.getElementById('result-title');
+        const resultDesc = document.getElementById('result-desc');
+
+        function loadQuiz() {
+            if (currentQuestion < quizQuestions.length) {
+                quizResult.classList.add('hidden');
+                quizContainer.classList.remove('hidden');
+                
+                const q = quizQuestions[currentQuestion];
+                let html = `
+                    <div class="mb-4 flex items-center justify-between text-xs text-red-400 font-semibold uppercase tracking-wider">
+                        <span>Câu hỏi ${currentQuestion + 1} / ${quizQuestions.length}</span>
+                        <span>Tiến độ: ${Math.round(((currentQuestion) / quizQuestions.length) * 100)}%</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-6">${q.question}</h3>
+                    <div class="space-y-3">
+                `;
+
+                q.options.forEach((opt, index) => {
+                    html += `
+                        <button onclick="selectAnswer(${opt.score})" class="w-full text-left bg-gray-800/80 hover:bg-red-600/20 border border-gray-700 hover:border-red-500 text-gray-200 p-4 rounded-xl transition flex items-center justify-between group">
+                            <span class="text-sm font-medium">${opt.text}</span>
+                            <i class="fa-solid fa-chevron-right text-gray-500 group-hover:text-red-400"></i>
+                        </button>
+                    `;
+                });
+
+                html += `</div>`;
+                quizContainer.innerHTML = html;
+            } else {
+                showQuizResult();
+            }
+        }
+
+        function selectAnswer(score) {
+            totalScore += score;
+            currentQuestion++;
+            loadQuiz();
+        }
+
+        function showQuizResult() {
+            quizContainer.classList.add('hidden');
+            quizResult.classList.remove('hidden');
+
+            let title = "";
+            let desc = "";
+            let borderColor = "";
+            let textColor = "";
+
+            if (totalScore <= 2) {
+                title = "Tâm lý ổn định - Tỉnh táo";
+                desc = "Bạn đang kiểm soát bản thân rất tốt và không có dấu hiệu vướng vào cờ bạc mạng. Hãy tiếp tục giữ vững lối sống lành mạnh và cảnh giác với các chiêu trò quảng cáo trên mạng xã hội.";
+                borderColor = "border-emerald-500/30 bg-emerald-500/10";
+                textColor = "text-emerald-400";
+            } else if (totalScore <= 6) {
+                title = "Cảnh báo nguy cơ tiềm ẩn!";
+                desc = "Bạn đã bắt đầu có một số dấu hiệu bị ảnh hưởng bởi cờ bạc hoặc có nguy cơ cao sa vào nếu không kịp thời dừng lại. Hãy thiết lập ranh giới rõ ràng, tuyệt đối không nạp tiền chơi thử thêm lần nào nữa.";
+                borderColor = "border-amber-500/30 bg-amber-500/10";
+                textColor = "text-amber-400";
+            } else {
+                title = "BÁO ĐỘNG ĐỎ: Dấu hiệu nghiện nặng!";
+                desc = "Kết quả cho thấy bạn đang rơi sâu vào vòng xoáy cờ bạc trực tuyến, gây tổn hại nghiêm trọng đến tâm lý và tài chính. Hãy lập tức tìm kiếm sự trợ giúp từ gia đình, đường dây nóng hoặc chuyên gia tư vấn ngay hôm nay!";
+                borderColor = "border-red-500/40 bg-red-500/10";
+                textColor = "text-red-400";
+            }
+
+            quizResult.className = `mt-8 p-6 rounded-2xl border text-center transition-all ${borderColor}`;
+            resultTitle.className = `text-2xl font-extrabold mb-3 ${textColor}`;
+            resultTitle.innerText = title;
+            resultDesc.innerText = desc;
+        }
+
+        function resetQuiz() {
+            currentQuestion = 0;
+            totalScore = 0;
+            loadQuiz();
+        }
+
+        // Initialize Quiz on load
+        window.addEventListener('DOMContentLoaded', () => {
+            loadQuiz();
+        });
+
+        // Support Form Handler
+        function handleSupportSubmit(e) {
+            e.preventDefault();
+            const successBox = document.getElementById('form-success');
+            successBox.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => {
+                successBox.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
